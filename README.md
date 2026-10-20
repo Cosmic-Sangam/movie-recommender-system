@@ -4,6 +4,7 @@ An AI-powered Movie Recommendation System built using Machine Learning and Strea
 
 This project recommends similar movies based on movie metadata such as genres, keywords, cast, crew, and overview using cosine similarity.
 
+Link: https://movie-recommender-system-truf2a7wrsymemcbcfeymd.streamlit.app/
 ---
 
 # Features
