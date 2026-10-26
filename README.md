@@ -1,50 +1,53 @@
-# Movie Recommender System
+# 🎬 AI-Powered Movie Recommender System
 
-An AI-powered Movie Recommendation System built using Machine Learning and Streamlit.
+![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![TMDB API](https://img.shields.io/badge/TMDB_API-01B4E4?style=for-the-badge&logo=themoviedb&logoColor=white)
 
-This project recommends similar movies based on movie metadata such as genres, keywords, cast, crew, and overview using cosine similarity.
+An end-to-end, content-based Movie Recommendation Application built with Python, Scikit-Learn, and Streamlit. The system analyzes movie metadata—including genres, plot overviews, keywords, cast, and crew—to compute pairwise similarity vectors and deliver instant, highly relevant film recommendations along with dynamic posters fetched via the TMDB REST API.
 
-Link: https://movie-recommender-system-truf2a7wrsymemcbcfeymd.streamlit.app/
----
-
-# Features
-
-- Movie recommendations
-- Movie posters using TMDB API
-- Content-based recommendation system
-- Streamlit web app
-- Fast and interactive UI
+🚀 **Live Web App:** [Movie Recommender System](https://movie-recommender-system-truf2a7wrsymemcbcfeymd.streamlit.app/)
 
 ---
 
-# Tech Stack
+## 📌 System Architecture
 
-- Python
-- Pandas
-- Scikit-Learn
-- Streamlit
-- TMDB API
-- NLP
-- Cosine Similarity
+```text
+┌────────────────┐     ┌───────────────────────┐     ┌───────────────────────┐
+│ Raw TMDB Data  │ ──> │ Feature Engineering   │ ──> │ NLP Text Vectorization│
+│ (Metadata/Cast)│     │ (Merge Genre/Overview)│     │ (Bag of Words / TFIDF)│
+└────────────────┘     └───────────────────────┘     └───────────────────────┘
+                                                                 │
+                                                                 ▼
+┌────────────────┐     ┌───────────────────────┐     ┌───────────────────────┐
+│ Streamlit UI   │ <── │ Top-5 Matches         │ <── │ Cosine Similarity     │
+│ (Posters + Meta)│     │ (Sorted Distance)     │     │ Matrix Calculation    │
+└────────────────┘     └───────────────────────┘     └───────────────────────┘
 
----
+```
+## 📂 Project Directory Structure
 
-# Project Structure
+```mermaid
+graph LR
+    Root["📂 movie-recommender-system/"]
+    
+    Root --> App["📄 app.py<br/><i>Main Streamlit UI & Engine</i>"]
+    Root --> Movies["📦 movies.pkl<br/><i>Processed Metadata DataFrame</i>"]
+    Root --> Vectors["📦 vectors.pkl<br/><i>Similarity Matrix & Vectors</i>"]
+    Root --> Req["📋 requirements.txt<br/><i>Package Dependencies</i>"]
+    Root --> Git["🔒 .gitignore<br/><i>Git Exclusion Rules</i>"]
+    Root --> Readme["📖 README.md<br/><i>Project Documentation</i>"]
 
-movie-recommender-system/
-│
-├── app.py
-├── movies.pkl
-├── vectors.pkl
-├── requirements.txt
-├── README.md
-├── .gitignore
+    style Root fill:#1f2937,stroke:#3b82f6,stroke-width:2px,color:#fff
+    style App fill:#1e293b,stroke:#0284c7,color:#e2e8f0
+    style Movies fill:#1e293b,stroke:#0284c7,color:#e2e8f0
+    style Vectors fill:#1e293b,stroke:#0284c7,color:#e2e8f0
+    style Req fill:#1e293b,stroke:#0284c7,color:#e2e8f0
+    style Git fill:#1e293b,stroke:#0284c7,color:#e2e8f0
+    style Readme fill:#1e293b,stroke:#0284c7,color:#e2e8f0
+```
 
----
-
-#  Installation
-
-## Clone Repository
-
-```bash
-git clone https://github.com/cosmic-sangam/movie-recommender-system.git
+git clone [https://github.com/Cosmic-Sangam/Movie-Recommender-System.git](https://github.com/Cosmic-Sangam/Movie-Recommender-System.git)
+cd Movie-Recommender-System
